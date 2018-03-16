@@ -14,7 +14,7 @@ def category_dictionary():
     f.close()
     return (dic)
 
-fi = open('./data/svm-data/pos_data3.txt','r',encoding='utf-8')
+fi = open('./data/svm-data/pos_train.txt','r',encoding='utf-8')
 strings = fi.read()
 fi.close()
 

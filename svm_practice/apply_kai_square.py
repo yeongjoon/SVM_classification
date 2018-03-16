@@ -15,15 +15,19 @@ length_to_cut = int(len(kai_square_list) * percentage_to_cut)
 sliced_kai_square_list = kai_square_list[:length_to_cut]
 kai_dict = dict(sliced_kai_square_list)
 
+fdic = open('./data/svm-data/kai_square_dict.txt','wb')
+pickle.dump(kai_dict, fdic)
+fdic.close()
+
 del(kai_square_list)
 del(sliced_kai_square_list)
 
 print('"kai_pos_data.txt" has been created with top ',int(percentage_to_cut*100),'% of the data.')
 #print(kai_dict)
 #print(bool('사회_수사_NNG' in kai_dict))
-fi = open('./data/svm-data/pos_data3.txt','r',encoding='utf-8')
+fi = open('./data/svm-data/pos_train.txt','r',encoding='utf-8')
 
-fo = open('./data/svm-data/kai_pos_data.txt','w',encoding='utf-8')
+fo = open('./data/svm-data/kai_pos_train.txt','w',encoding='utf-8')
 
 strs = fi.read()
 tmps = strs.split('@DOCUMENT\n')
